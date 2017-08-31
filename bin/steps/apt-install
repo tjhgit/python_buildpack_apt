@@ -53,7 +53,7 @@ for DEB in $(ls -1 $APT_CACHE_DIR/archives/*.deb); do
 done
 
 topic "Preparing export env variables..."
-SO_LIBS=
+SO_LIB=
 for SO_PATH in $(find $BUILD_DIR/.apt -type f -name *.so | sed -r 's|/[^/]+$||' |uniq); do
   SO_PATH=$(echo $SO_PATH | sed "s|$BUILD_DIR|/app|g")
   SO_LIB="$SO_PATH:$SO_LIB"
